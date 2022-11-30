@@ -34,25 +34,25 @@ for ( let i = 0; i < words.length; i++ ){
         lookup[firstLetter] = [];
     }
 
-    // 💬
+    // used to find words using the first letter of word
     lookup[firstLetter].push(word);
 }
 
-// 💬
+// lets user look up words in search using the first letter
 for ( firstLetter in lookup ){
    let entry = lookup[firstLetter];
 
-   // 💬
+   // will return words based on the specified parameters
    entry = entry.filter((item, index) => entry.indexOf(item) === index);
 
-   // 💬
+   // sorts information that appear in the search results
    entry = entry.sort();
 
-   // 💬
+   // used to look up the first letter of an entry
    lookup[firstLetter] = entry;
 }
 
-// 💬
+// returns an array of information based on the letter
 for ( letter of Object.keys(lookup).sort() ){
     console.log(letter, lookup[letter]);
 }
